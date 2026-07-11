@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  trace-xai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: trace-xai:latest
+    container_name: trace-xai-app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      # Load secret keys directly from host context or .env file
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - APP_URL=${APP_URL:-http://localhost:3000}
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

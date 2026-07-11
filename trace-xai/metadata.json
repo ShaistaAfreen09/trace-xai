@@ -1,0 +1,6 @@
+{
+  "name": "TRACE-XAI",
+  "description": "Temporal Retrieval-Augmented Conflict Explanation System. An Explainable AI research platform for document intelligence, temporal reasoning, source attribution, and source conflict detection.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
